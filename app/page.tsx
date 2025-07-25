@@ -124,26 +124,6 @@ export default function Home() {
                 value={prompt}
                 onChange={(e) => setPrompt(e.target.value)}
               />
-              
-              {/* Magic particles container */}
-              <AnimatePresence>
-                {particles.map((particle) => (
-                  <motion.div
-                    key={particle.id}
-                    className="absolute rounded-full bg-primary"
-                    style={{
-                      left: `${particle.x}%`,
-                      top: `${particle.y}%`,
-                      width: `${particle.size}px`,
-                      height: `${particle.size}px`,
-                    }}
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
-                    exit={{ opacity: 0, scale: 0 }}
-                    transition={{ duration: particle.duration, ease: "easeOut" }}
-                  />
-                ))}
-              </AnimatePresence>
             </CardContent>
             <CardFooter className="flex justify-end">
               <Button 
